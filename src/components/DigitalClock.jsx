@@ -1,8 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const DigitalClock = () => {
+
+    let time = new Date().toLocaleTimeString();
+    const [cTime,setCTime] = useState(time)
+
+    const handleTime = ()=>{
+        time = new Date().toLocaleTimeString();
+        setCTime(time)
+
+    }
+
+    setInterval(handleTime,1000)
   return (
-    <div>DigitalClock</div>
+    <div>{cTime}</div>
   )
 }
 
